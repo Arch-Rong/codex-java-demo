@@ -1,0 +1,8 @@
+spring:
+  config:
+    # 仅开发环境与 Docker 共用 .env，不执行其中的 shell 内容。
+    import: "optional:file:.env[.properties]"
+  datasource:
+    url: "jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3307}/${MYSQL_DATABASE:codex_demo}?connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true&characterEncoding=UTF-8&connectTimeout=5000&socketTimeout=10000"
+    username: ${MYSQL_USER:codex_demo}
+    password: ${MYSQL_PASSWORD}

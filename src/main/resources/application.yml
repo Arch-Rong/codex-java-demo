@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: codex-java-demo
+  profiles:
+    # 本地直接运行使用 dev；部署时通过 SPRING_PROFILES_ACTIVE=prod 切换。
+    default: dev
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 5000
+  sql:
+    init:
+      mode: never
+  flyway:
+    clean-disabled: true
+
+server:
+  address: 127.0.0.1
+  port: ${PORT:8081}
